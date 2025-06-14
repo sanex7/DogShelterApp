@@ -94,6 +94,40 @@ class Program
                     });
                     break;
 
+                case "7":
+                    Console.Write("Ім’я опікуна: ");
+                    var adopterName = Console.ReadLine();
+                    Console.Write("Номер телефону: ");
+                    var phone = Console.ReadLine();
+
+                    var adopter = new Adopter { Name = adopterName!, PhoneNumber = phone! };
+                    context.Adopters.Add(adopter);
+                    context.SaveChanges();
+                    Console.WriteLine("Опікуна додано!");
+                    break;
+
+                case "8":
+                    Console.Write("Id собаки для всиновлення: ");
+                    var dogId = int.Parse(Console.ReadLine()!);
+                    Console.Write("Id опікуна: ");
+                    var adopterId = int.Parse(Console.ReadLine()!);
+
+                    var dogToAdopt = context.Dogs.Find(dogId);
+                    var adopterFound = context.Adopters.Find(adopterId);
+
+                    if (dogToAdopt != null && adopterFound != null)
+                    {
+                        dogToAdopt.IsAdopted = true;
+                        dogToAdopt.AdopterId = adopterFound.Id;
+                        context.SaveChanges();
+                        Console.WriteLine("Собаку всиновлено!");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Не знайдено собаку або опікуна.");
+                    }
+                    break;
+
                 case "0":
                     return;
             }

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DogShelterApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cc63c8f505b33582065a5166bdcc1b8a333e5a36")]
 [assembly: System.Reflection.AssemblyProductAttribute("DogShelterApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DogShelterApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
