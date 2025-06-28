@@ -21,6 +21,9 @@ class Program
                 4. Переглянути усиновлених
                 5. Пошук собаки
                 6. Оновити дані собаки
+                7. Додати опікуна
+                8. Всиновити собаку
+                9. Масово додати 20 собак
                 0. Вийти
             """);
 
@@ -126,6 +129,26 @@ class Program
                     {
                         Console.WriteLine("Не знайдено собаку або опікуна.");
                     }
+                    break;
+
+                case "9":
+                    var dogs = new List<Dog>();
+
+                    for (int i = 1; i <= 20; i++)
+                    {
+                        dogs.Add(new Dog
+                        {
+                            Name = $"Dog{i}",
+                            Age = new Random().Next(1, 15),
+                            Breed = $"Breed{i}",
+                            IsAdopted = false
+                        });
+                    }
+
+                    context.Dogs.AddRange(dogs);
+                    context.SaveChanges();
+
+                    Console.WriteLine("20 собак успішно додано!");
                     break;
 
                 case "0":
